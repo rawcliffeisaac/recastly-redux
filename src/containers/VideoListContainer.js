@@ -2,28 +2,27 @@ import { connect } from 'react-redux';
 import VideoList from './../components/VideoList.js';
 import changeVideo from './../actions/currentVideo.js';
 
-var VideoListContainer = () => {
-  // connect(mapStateToProps, mapDispatchToProps)(VideoList)
+var VideoListContainer = connect(mapStateToProps, mapDispatchToProps)(VideoList);
+  // return connect(mapStateToProps, mapDispatchToProps)(VideoList)
     // mapDispatchToProps
     // mapStateToProps
       // select the part of store data that the connected component needs (https://react-redux.js.org/using-react-redux/connect-mapstate)
         // in this case, that's just currentVideo
+// };
 
-};
-
+// add ownProps here?
 const mapStateToProps = (state) => {
   return {
-    currentVideo: state.currentVideo
+    videos: state.videos
   };
 };
 
-// changeVideo
-
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    changeVideo: () => dispatch(changeVideo(ownProps))
+    changeVideo: () => dispatch(changeVideo())
   };
 };
+
 
 // const mapDispatchToProps = (dispatch, ownProps) => {
 //   toggleTodo: () => dispatch(toggleTodo(ownProps.todoId))
