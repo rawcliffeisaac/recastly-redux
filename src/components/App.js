@@ -3,16 +3,24 @@ import VideoList from './VideoList.js';
 import VideoPlayer from './VideoPlayer.js';
 import Search from './Search.js';
 
+import SampleData from '../data/exampleVideoData.js';
+
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      videos: [],
-      currentVideo: null
+      // videos: [],
+      // currentVideo: null
+      videos: this.sampleData(),
+      currentVideo: this.sampleData()[0]
     };
 
     this.getYouTubeVideos = this.getYouTubeVideos.bind(this);
+  }
+
+  sampleData() {
+    return SampleData;
   }
 
   componentDidMount() {
@@ -64,3 +72,4 @@ class App extends React.Component {
 }
 
 export default App;
+// console.log(App.sampleData());
