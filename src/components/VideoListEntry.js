@@ -9,7 +9,8 @@ var VideoListEntry = ({video, handleVideoListEntryTitleClick}) => (
     <div className="media-body">
       <div
         className="video-list-entry-title"
-        onClick={() => handleVideoListEntryTitleClick(video)}
+        // onClick={() => handleVideoListEntryTitleClick(video)}
+        onClick={() => this.props.store.dispatch(changeVideo(video))}
       >
         {video.snippet.title}
       </div>

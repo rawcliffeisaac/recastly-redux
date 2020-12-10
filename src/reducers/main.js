@@ -4,8 +4,7 @@ import videoList from './videoList.js';
 
 var rootReducer = () => {
   //ask about formating in key value pairs?
-
-  currentVideo,
+  // currentVideo,
 };
 
 //TODO: define the root reducer for this app

@@ -3,8 +3,14 @@ import VideoList from './VideoList.js';
 import VideoPlayer from './VideoPlayer.js';
 import Search from './Search.js';
 
+//////////////////////////
 import SampleData from '../data/exampleVideoData.js';
-
+// import Store from '../store/store.js'; // THIS LINE THROWS BIG ERRORS
+// I WANT THE LINE ABOVE SO I CAN TEST WHAT'S IN THE STORE IM CREATING IN STORE.JS'
+console.log('hi'); // this console.log works. i guess that's something.
+import Store from '../store/store.js';
+console.log(Store.getState());
+//////////////////////////
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -27,9 +33,9 @@ class App extends React.Component {
     this.getYouTubeVideos('react tutorials');
   }
 
-  handleVideoListEntryTitleClick(video) {
-    this.setState({currentVideo: video});
-  }
+  // handleVideoListEntryTitleClick(video) {
+  //   this.setState({currentVideo: video});
+  // }
 
   getYouTubeVideos(query) {
     var options = {
@@ -61,7 +67,7 @@ class App extends React.Component {
           </div>
           <div className="col-md-5">
             <VideoList
-              handleVideoListEntryTitleClick={this.handleVideoListEntryTitleClick.bind(this)}
+              // handleVideoListEntryTitleClick={this.handleVideoListEntryTitleClick.bind(this)}
               videos={this.state.videos}
             />
           </div>
@@ -72,4 +78,3 @@ class App extends React.Component {
 }
 
 export default App;
-// console.log(App.sampleData());
