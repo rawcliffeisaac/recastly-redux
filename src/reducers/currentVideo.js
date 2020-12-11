@@ -6,11 +6,12 @@ const defaultState = {
   currentVideo: TestData[0]
 };
 
-var currentVideoReducer = (state = defaultState, {type, payload}) => {
+var currentVideoReducer = (state = null, action) => {
   //TODO: define a reducer for the currentVideo field of our state.
-  switch (type) {
+  // if (!state) { return defaultState; }
+  switch (action.type) {
   case 'CHANGE_CURRENT_VIDEO':
-    return {currentVideo: payload};
+    return action.video || null;
   default:
     return state;
   }

@@ -2,10 +2,8 @@ import { combineReducers } from 'redux';
 import currentVideo from './currentVideo.js';
 import videoList from './videoList.js';
 
-var rootReducer = () => {
-  //ask about formating in key value pairs?
-  // currentVideo,
-};
+var rootReducer = combineReducers({currentVideo});
+//ask about formating in key value pairs?
 
 //TODO: define the root reducer for this app
 
